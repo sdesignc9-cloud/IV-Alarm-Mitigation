@@ -470,7 +470,8 @@ body {
   .TitleText { font-size: 1.4rem; }
   .DescriptionBox { padding: 20px; }
   .MemberInner { gap: 18px; padding: 0 16px; }
-  .FooterNav nav { gap: 18px; }
+  .FooterNav { height: auto; padding: 6px 10px; }
+  .FooterNav nav { flex-wrap: wrap; justify-content: center; gap: 4px 16px; }
   .ReportGrid .DescriptionBox { width: 100%; }
   .FooterNav a { font-size: 0.95rem; }
 }
