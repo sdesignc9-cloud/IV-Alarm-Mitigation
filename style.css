@@ -25,7 +25,7 @@ body {
 .HeaderBar {
   position: relative;    /* keeps the shadow drawn on top of the page below */
   z-index: 10;
-  background: #1f232d;
+  background: #171a21;   /* a bit darker than the text boxes */
   padding: 18px 32px;
   text-align: center;    /* centers the project title */
   box-shadow: 0 10px 40px 4px rgba(0, 0, 0, 0.7);   /* long, soft shadow */
@@ -145,6 +145,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;   /* each line is only as wide as its text */
+}
+
+.MemberRow:nth-of-type(even) .MemberText {
+  align-items: flex-end;
 }
 
 .MemberName {
@@ -207,11 +212,13 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;     /* headings only as wide as their text */
   align-self: flex-start;      /* odd reports sit on the left */
 }
 
 .ReportGrid .DescriptionBox:nth-child(even) {
   align-self: flex-end;        /* even reports sit on the right */
+  align-items: flex-end;
   text-align: right;
 }
 
@@ -334,10 +341,20 @@ body {
   border-bottom-color: #ffffff;
 }
 
+/* ============ Progress page ============ */
+.DescriptionBox .UpdateDate {
+  flex: none;
+  margin: -4px 0 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9fb3d9;
+}
+
 /* ============ Hover effects ============ */
 /* One speed for every hover animation: change it here */
 :root {
   --hover-speed: 0.5s;
+  --text-glow: 0 0 14px rgba(170, 195, 255, 0.55);
 }
 
 /* Everything that animates on hover */
@@ -355,18 +372,18 @@ body {
 .DescriptionBox h3,
 .MemberName,
 .MemberRole,
-.MemberText p,
-.MemberRow {
+.MemberText p {
   transition: transform var(--hover-speed) ease,
               box-shadow var(--hover-speed) ease,
-              padding var(--hover-speed) ease,
+              color var(--hover-speed) ease,
+              text-shadow var(--hover-speed) ease,
               opacity var(--hover-speed), border-color var(--hover-speed);
 }
 
-/* Text boxes no longer grow, they just glow */
+/* Text boxes don't grow, they glow */
 .DescriptionBox:hover {
   box-shadow: 0 14px 50px 6px rgba(0, 0, 0, 0.65),
-              0 0 32px 4px rgba(150, 180, 255, 0.35);
+              0 0 22px 0 rgba(150, 180, 255, 0.18);
 }
 
 /* Pictures (including team photos): grow 5% */
@@ -374,6 +391,13 @@ body {
 .GalleryGrid img:hover,
 .MemberPhoto:hover {
   transform: scale(1.05);
+}
+
+/* Glow-only image (home page picture, Gantt chart): no growth, just a glow */
+.GlowImage:hover {
+  transform: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45),
+              0 0 40px 6px rgba(150, 180, 255, 0.4);
 }
 
 /* Buttons: grow 10% */
@@ -399,9 +423,33 @@ body {
   transform: scale(1.05);
 }
 
-/* Grow text from the side it's aligned to, so it doesn't drift sideways */
+/* All text: brighten and glow a little on hover */
+.TitleText:hover,
+.HeaderText:hover,
+.SubHeaderText:hover,
+.DescriptionText:hover,
+.DescriptionBox p:hover,
+.DescriptionBox h3:hover,
+.MemberName:hover,
+.MemberText p:hover {
+  color: #ffffff;
+  text-shadow: var(--text-glow);
+}
+
+.MemberText .MemberRole:hover {
+  color: #c9d7f5;
+  text-shadow: var(--text-glow);
+}
+
+/* Where text grows from:
+   - paragraphs that fill a box grow from the middle, so they stay inside the box
+   - short lines (headings, names, roles) are only as wide as their text and grow
+     from the side they're anchored to */
 .DescriptionText,
-.DescriptionBox p,
+.DescriptionBox p {
+  transform-origin: center;
+}
+
 .DescriptionBox h3,
 .MemberName,
 .MemberRole,
@@ -409,18 +457,11 @@ body {
   transform-origin: left center;
 }
 
-.ReportGrid .DescriptionBox:nth-child(even) p,
 .ReportGrid .DescriptionBox:nth-child(even) h3,
 .MemberRow:nth-of-type(even) .MemberName,
 .MemberRow:nth-of-type(even) .MemberRole,
 .MemberRow:nth-of-type(even) .MemberText p {
   transform-origin: right center;
-}
-
-/* Person rows: get taller on hover (more space above and below), never wider */
-.MemberRow:hover {
-  padding-top: 56px;
-  padding-bottom: 56px;
 }
 
 /* ============ Small screens ============ */

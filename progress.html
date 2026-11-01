@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header bar -->
+  <header class="HeaderBar">
+    <h1 class="TitleText PageText">Project Progress</h1>
+  </header>
+
+  <main class="PageContent">
+
+    <!-- Gantt chart: same size and glow-on-hover as the home page image.
+         Swap the src for your exported chart (e.g. images/gantt.png). -->
+    <div class="ImageRow HeroRow">
+      <img class="ProjectImage GlowImage" src="images/gantt.svg" alt="Project Gantt chart">
+    </div>
+
+    <!-- ===== Progress Updates ===== -->
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Progress Updates</h2>
+      <p class="DescriptionText">
+        Regular updates on what we've completed, what we're working on, and what's next.
+      </p>
+
+      <!-- Each update is one .DescriptionBox. Copy one to add an update;
+           they alternate left and right automatically. -->
+      <div class="ReportGrid">
+        <div class="DescriptionBox">
+          <h3>Update 1: Project Kickoff</h3>
+          <p class="UpdateDate">Month Day, Year</p>
+          <p>Summary of the first update: team formed, sponsor meeting, initial scope agreed.</p>
+          <a class="ReportLink" href="updates/update1.pdf" target="_blank">View Update</a>
+        </div>
+
+        <div class="DescriptionBox">
+          <h3>Update 2: Research &amp; Concepts</h3>
+          <p class="UpdateDate">Month Day, Year</p>
+          <p>Summary of the second update: background research, requirements, and early concepts.</p>
+          <a class="ReportLink" href="updates/update2.pdf" target="_blank">View Update</a>
+        </div>
+
+        <div class="DescriptionBox">
+          <h3>Update 3: Design Selection</h3>
+          <p class="UpdateDate">Month Day, Year</p>
+          <p>Summary of the third update: concept evaluation and the selected design.</p>
+          <a class="ReportLink" href="updates/update3.pdf" target="_blank">View Update</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Gradient footer: stays pinned to the bottom of the window while scrolling -->
+  <footer class="FooterNav">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="design.html">Conceptual Design</a>
+      <a href="progress.html" class="active">Progress</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
