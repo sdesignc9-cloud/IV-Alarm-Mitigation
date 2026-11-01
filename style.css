@@ -198,6 +198,37 @@ body {
   margin: 0 0 18px;
 }
 
+/* Design concepts: side by side in one row, using 90% of the window width */
+.ConceptRow {
+  width: 90vw;
+  margin-left: calc(50% - 45vw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.ConceptCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ConceptCard .SubHeaderText {
+  margin: 0;
+}
+
+.ConceptCard .ProjectImage {
+  aspect-ratio: 4 / 3;   /* all three images the same shape, whatever their size */
+  object-fit: cover;
+}
+
+.ConceptCard .DescriptionBox {
+  max-width: none;
+  margin: 0;
+  padding: 22px 24px;
+}
+
 /* Report cards: stacked with space between, alternating left / right */
 .ReportGrid {
   display: flex;
