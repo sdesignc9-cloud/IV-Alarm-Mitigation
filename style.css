@@ -1,0 +1,224 @@
+/* ============ Base ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #14161c;
+  color: #e6e8ee;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  /* leave room so the fixed footer never covers the last of the content */
+  padding-bottom: 140px;
+  overflow-x: hidden;    /* full-width gradient bands never cause sideways scrolling */
+}
+
+/* Shared text class for anything on the page */
+.PageText {
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ============ Header bar ============ */
+.HeaderBar {
+  position: relative;    /* keeps the shadow drawn on top of the page below */
+  z-index: 10;
+  background: #1f232d;
+  padding: 18px 32px;
+  text-align: center;    /* centers the project title */
+  box-shadow: 0 10px 40px 4px rgba(0, 0, 0, 0.7);   /* long, soft shadow */
+}
+
+.TitleText {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ============ Main content ============ */
+.PageContent {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Horizontal flex row; image fills the width, height fits the image */
+.ImageRow {
+  display: flex;
+  justify-content: center;
+}
+
+.ProjectImage {
+  width: 100%;
+  height: auto;          /* vertical fit: keeps the image's proportions */
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.HeaderText {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+/* Full-width bar that fades transparent -> dark -> transparent (top to bottom).
+   Put it on any element inside .PageContent; it stretches to the window edges. */
+.GradientBand {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(to bottom,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.6) 50%,
+              rgba(0, 0, 0, 0) 100%);
+}
+
+.HeaderText.GradientBand {
+  padding: 26px 0;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+/* ============ Team page ============ */
+.MemberList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* One person: photo on the left, name + description on the right */
+.MemberRow {
+  padding: 30px 0;
+}
+
+/* Every other person gets the gradient band behind them */
+.MemberRow:nth-child(even) {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(to bottom,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.6) 50%,
+              rgba(0, 0, 0, 0) 100%);
+}
+
+.MemberInner {
+  display: flex;
+  align-items: flex-start;  /* text keeps its natural height; the photo is sized to match it */
+  gap: 32px;
+  max-width: 1052px;     /* matches the page content width */
+  margin: 0 auto;
+}
+
+.MemberPhoto {
+  flex: none;
+  height: auto;          /* height set to match the text by the script in team.html */
+  width: 140px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a3040;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.MemberText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MemberName {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.MemberText .MemberRole {
+  margin: 2px 0 8px;
+  font-weight: 600;
+  color: #9fb3d9;
+}
+
+.MemberText p {
+  margin: 0;
+}
+
+.SectionGap {
+  margin-top: 56px;
+}
+
+/* Centered box, text inside reads left to right */
+.DescriptionBox {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  background: #1f232d;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 14px 50px 6px rgba(0, 0, 0, 0.65);  /* long, soft shadow */
+}
+
+.DescriptionBox p {
+  margin: 0 0 1em;
+}
+
+.DescriptionBox p:last-child {
+  margin-bottom: 0;
+}
+
+.ProductStatement {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ============ Gradient footer nav ============ */
+.FooterNav {
+  position: fixed;       /* pinned to the window, so it stays put while scrolling */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 22px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;  /* clicks pass through the faded part... */
+}
+
+.FooterNav nav {
+  display: flex;
+  gap: 36px;
+  pointer-events: auto;  /* ...but the links stay clickable */
+}
+
+.FooterNav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, opacity 0.2s;
+  opacity: 0.85;
+}
+
+.FooterNav a:hover,
+.FooterNav a.active {
+  opacity: 1;
+  border-bottom-color: #ffffff;
+}
+
+/* ============ Small screens ============ */
+@media (max-width: 600px) {
+  .HeaderBar { padding: 14px 18px; }
+  .TitleText { font-size: 1.4rem; }
+  .DescriptionBox { padding: 20px; }
+  .MemberInner { gap: 18px; padding: 0 16px; }
+  .FooterNav nav { gap: 18px; }
+  .FooterNav a { font-size: 0.95rem; }
+}

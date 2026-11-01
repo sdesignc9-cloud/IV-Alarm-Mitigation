@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Homepage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Project Title</h1>
-    </header>
 
-    <main>
-        <section class="project-image">
-            <img src="images/project.jpg" alt="Project Image">
-        </section>
+  <!-- Header bar -->
+  <header class="HeaderBar">
+    <h1 class="TitleText PageText">Project Title</h1>
+  </header>
 
-        <section class="project-description">
-            <h2>About Our Project</h2>
-            <p>
-                Enter your project description here.
-                This section will explain the purpose of
-                your project, its goals, and what your
-                team hopes to accomplish.
-            </p>
-        </section>
-    </main>
+  <main class="PageContent">
 
-    <footer>
-        <nav>
-            <a href="team.html">Our Team</a>
-            <a href="design.html">Project Design</a>
-            <a href="progress.html">Project Progress</a>
-        </nav>
-    </footer>
+    <!-- Project image: stretches to the page width, height follows the image -->
+    <div class="ImageRow">
+      <img class="ProjectImage" src="images/project.svg" alt="Our project">
+    </div>
+
+    <!-- Section heading -->
+    <h2 class="HeaderText PageText GradientBand">About our project</h2>
+
+    <!-- Description box -->
+    <div class="DescriptionBox">
+      <p class="ProductStatement">
+        Our product statement goes here: one sentence that says what we are building and who it is for.
+      </p>
+      <p>
+        Replace this paragraph with your project description. Explain the problem you are solving,
+        why it matters, and how your design addresses it. The text reads left to right inside a
+        centered box, so long paragraphs stay comfortable to read on wide screens.
+      </p>
+      <p>
+        Add a second paragraph for goals, scope, or what makes your approach different.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Gradient footer: stays pinned to the bottom of the window while scrolling -->
+  <footer class="FooterNav">
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="design.html">Conceptual Design</a>
+    </nav>
+  </footer>
+
 </body>
-
 </html>

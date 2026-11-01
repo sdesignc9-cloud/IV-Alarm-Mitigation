@@ -1,111 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Our Team</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Meet Our Team</h1>
-    </header>
 
-    <main>
-        <!-- Team Members -->
-        <section class="team-section">
-            <h2>Team Members</h2>
+  <!-- Header bar -->
+  <header class="HeaderBar">
+    <h1 class="TitleText PageText">Meet Our Team</h1>
+  </header>
 
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="images/member1.jpg" alt="Team Member 1">
-                    <h3>Team Member 1</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 1.</p>
-                </div>
+  <main class="PageContent">
 
-                <div class="team-member">
-                    <img src="images/member2.jpg" alt="Team Member 2">
-                    <h3>Team Member 2</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 2.</p>
-                </div>
+    <!-- ===== Team Members ===== -->
+    <!-- Each person is one .MemberRow. Copy a row to add someone;
+         every other row automatically gets the gradient band. -->
+    <h2 class="HeaderText PageText">Team Members</h2>
 
-                <div class="team-member">
-                    <img src="images/member3.jpg" alt="Team Member 3">
-                    <h3>Team Member 3</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 3.</p>
-                </div>
+    <div class="MemberList">
 
-                <div class="team-member">
-                    <img src="images/member4.jpg" alt="Team Member 4">
-                    <h3>Team Member 4</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 4.</p>
-                </div>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member1.jpg" alt="Team Member 1">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 1</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 1.</p>
+          </div>
+        </div>
+      </div>
 
-                <div class="team-member">
-                    <img src="images/member5.jpg" alt="Team Member 5">
-                    <h3>Team Member 5</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 5.</p>
-                </div>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member2.jpg" alt="Team Member 2">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 2</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 2.</p>
+          </div>
+        </div>
+      </div>
 
-                <div class="team-member">
-                    <img src="images/member6.jpg" alt="Team Member 6">
-                    <h3>Team Member 6</h3>
-                    <p>Role / Major</p>
-                    <p>Description of team member 6.</p>
-                </div>
-            </div>
-        </section>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member3.jpg" alt="Team Member 3">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 3</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 3.</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Faculty Advisor -->
-        <section class="advisor-section">
-            <h2>Faculty Advisor</h2>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member4.jpg" alt="Team Member 4">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 4</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 4.</p>
+          </div>
+        </div>
+      </div>
 
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="images/advisor.jpg" alt="Faculty Advisor">
-                    <h3>Advisor Name</h3>
-                    <p>Faculty Advisor</p>
-                    <p>Description of faculty advisor.</p>
-                </div>
-            </div>
-        </section>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member5.jpg" alt="Team Member 5">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 5</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 5.</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Project Sponsors -->
-        <section class="sponsor-section">
-            <h2>Project Sponsors</h2>
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/member6.jpg" alt="Team Member 6">
+          <div class="MemberText">
+            <h3 class="MemberName">Team Member 6</h3>
+            <p class="MemberRole">Role / Major</p>
+            <p>Description of team member 6.</p>
+          </div>
+        </div>
+      </div>
 
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="images/sponsor1.jpg" alt="Sponsor 1">
-                    <h3>Sponsor 1</h3>
-                    <p>Position / Organization</p>
-                    <p>Description of sponsor 1.</p>
-                </div>
+    </div>
 
-                <div class="team-member">
-                    <img src="images/sponsor2.jpg" alt="Sponsor 2">
-                    <h3>Sponsor 2</h3>
-                    <p>Position / Organization</p>
-                    <p>Description of sponsor 2.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- ===== Faculty Advisor ===== -->
+    <h2 class="HeaderText PageText SectionGap">Faculty Advisor</h2>
 
-    <footer>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="design.html">Project Design</a>
-            <a href="progress.html">Project Progress</a>
-        </nav>
-    </footer>
+    <div class="MemberList">
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/advisor.jpg" alt="Faculty Advisor">
+          <div class="MemberText">
+            <h3 class="MemberName">Advisor Name</h3>
+            <p class="MemberRole">Faculty Advisor</p>
+            <p>Description of faculty advisor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Project Sponsors ===== -->
+    <h2 class="HeaderText PageText SectionGap">Project Sponsors</h2>
+
+    <div class="MemberList">
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/sponsor1.jpg" alt="Sponsor 1">
+          <div class="MemberText">
+            <h3 class="MemberName">Sponsor 1</h3>
+            <p class="MemberRole">Position / Organization</p>
+            <p>Description of sponsor 1.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="MemberRow">
+        <div class="MemberInner">
+          <img class="MemberPhoto" src="images/sponsor2.jpg" alt="Sponsor 2">
+          <div class="MemberText">
+            <h3 class="MemberName">Sponsor 2</h3>
+            <p class="MemberRole">Position / Organization</p>
+            <p>Description of sponsor 2.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Gradient footer: stays pinned to the bottom of the window while scrolling -->
+  <footer class="FooterNav">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="team.html" class="active">Meet the Team</a>
+      <a href="design.html">Conceptual Design</a>
+    </nav>
+  </footer>
+
+  <!-- Makes each round photo exactly as tall as its name + description,
+       and keeps it that way when the window is resized. -->
+  <script>
+    const rows = document.querySelectorAll('.MemberInner');
+    const sizePhotos = () => {
+      rows.forEach(row => {
+        const text = row.querySelector('.MemberText');
+        const photo = row.querySelector('.MemberPhoto');
+        const h = text.offsetHeight;
+        photo.style.width = h + 'px';
+        photo.style.height = h + 'px';
+      });
+    };
+    sizePhotos();
+    new ResizeObserver(sizePhotos).observe(document.body);
+  </script>
+
 </body>
-
 </html>

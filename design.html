@@ -1,144 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conceptual Design</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Conceptual Design</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Conceptual Design</h1>
-    </header>
 
-    <main>
-        <!-- Design Overview -->
-        <section class="design-overview">
-            <h2>Design Overview</h2>
-            <p>
-                Enter an overview of the project's conceptual
-                design. Describe the engineering challenges,
-                design objectives, and proposed solutions.
-            </p>
-        </section>
+  <!-- Header bar -->
+  <header class="HeaderBar">
+    <h1 class="TitleText PageText">Conceptual Design</h1>
+  </header>
 
-        <!-- Design Concept 1 -->
-        <section class="design-section">
-            <h2>Design Concept 1</h2>
+  <main class="PageContent">
 
-            <div class="design-content">
-                <img src="images/design1.jpg" alt="Design Concept 1">
+    <!-- ===== Design Overview (standalone text, no box) ===== -->
+    <h2 class="HeaderText PageText GradientBand">Design Overview</h2>
+    <p class="DescriptionText">
+      Enter an overview of the project's conceptual design. Describe the engineering
+      challenges, design objectives, and proposed solutions.
+    </p>
 
-                <p>
-                    Enter a description of the first design
-                    concept, including its functionality,
-                    advantages, and limitations.
-                </p>
-            </div>
-        </section>
+    <!-- ===== Design concepts: heading, image, description box =====
+         Copy a .DesignBlock to add another concept. -->
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Design Concept 1</h2>
+      <div class="ImageRow">
+        <img class="ProjectImage" src="images/design1.jpg" alt="Design Concept 1">
+      </div>
+      <div class="DescriptionBox">
+        <p>
+          Enter a description of the first design concept, including its functionality,
+          advantages, and limitations.
+        </p>
+      </div>
+    </section>
 
-        <!-- Design Concept 2 -->
-        <section class="design-section">
-            <h2>Design Concept 2</h2>
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Design Concept 2</h2>
+      <div class="ImageRow">
+        <img class="ProjectImage" src="images/design2.jpg" alt="Design Concept 2">
+      </div>
+      <div class="DescriptionBox">
+        <p>
+          Enter a description of the second design concept, including its functionality,
+          advantages, and limitations.
+        </p>
+      </div>
+    </section>
 
-            <div class="design-content">
-                <img src="images/design2.jpg" alt="Design Concept 2">
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Design Concept 3</h2>
+      <div class="ImageRow">
+        <img class="ProjectImage" src="images/design3.jpg" alt="Design Concept 3">
+      </div>
+      <div class="DescriptionBox">
+        <p>
+          Enter a description of the third design concept, including its functionality,
+          advantages, and limitations.
+        </p>
+      </div>
+    </section>
 
-                <p>
-                    Enter a description of the second design
-                    concept, including its functionality,
-                    advantages, and limitations.
-                </p>
-            </div>
-        </section>
+    <!-- ===== Design Reports & Documentation ===== -->
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Design Reports &amp; Documentation</h2>
+      <p class="DescriptionText">
+        View or download our engineering design reports and supporting documentation.
+      </p>
 
-        <!-- Design Concept 3 -->
-        <section class="design-section">
-            <h2>Design Concept 3</h2>
+      <div class="ReportGrid">
+        <div class="DescriptionBox">
+          <h3>Phase 1 Design Report</h3>
+          <p>Initial research, conceptual designs, and design selection.</p>
+          <a class="ReportLink" href="reports/phase1.pdf" target="_blank">View Report</a>
+        </div>
 
-            <div class="design-content">
-                <img src="images/design3.jpg" alt="Design Concept 3">
+        <div class="DescriptionBox">
+          <h3>Phase 2 Design Report</h3>
+          <p>Detailed design development and engineering analysis.</p>
+          <a class="ReportLink" href="reports/phase2.pdf" target="_blank">View Report</a>
+        </div>
 
-                <p>
-                    Enter a description of the third design
-                    concept, including its functionality,
-                    advantages, and limitations.
-                </p>
-            </div>
-        </section>
+        <div class="DescriptionBox">
+          <h3>Additional Documentation</h3>
+          <p>Supporting calculations, technical drawings, and other documents.</p>
+          <a class="ReportLink" href="reports/additional.pdf" target="_blank">View Report</a>
+        </div>
+      </div>
+    </section>
 
-        <!-- Design Reports -->
-        <section class="design-reports">
-            <h2>Design Reports & Documentation</h2>
+    <!-- ===== Design Gallery ===== -->
+    <section class="DesignBlock">
+      <h2 class="HeaderText PageText GradientBand">Design Gallery</h2>
+      <p class="DescriptionText">
+        Additional images, CAD models, sketches, and diagrams of our design process.
+      </p>
 
-            <p>
-                View or download our engineering design
-                reports and supporting documentation.
-            </p>
+      <div class="GalleryGrid">
+        <img src="images/gallery1.jpg" alt="Design Image 1">
+        <img src="images/gallery2.jpg" alt="Design Image 2">
+        <img src="images/gallery3.jpg" alt="Design Image 3">
+        <img src="images/gallery4.jpg" alt="Design Image 4">
+      </div>
+    </section>
 
-            <div class="report-container">
-                <div class="report">
-                    <h3>Phase 1 Design Report</h3>
-                    <p>
-                        Initial research, conceptual designs,
-                        and design selection.
-                    </p>
-                    <a href="reports/phase1.pdf" target="_blank">
-                        View Report
-                    </a>
-                </div>
+  </main>
 
-                <div class="report">
-                    <h3>Phase 2 Design Report</h3>
-                    <p>
-                        Detailed design development and
-                        engineering analysis.
-                    </p>
-                    <a href="reports/phase2.pdf" target="_blank">
-                        View Report
-                    </a>
-                </div>
+  <!-- Gradient footer: stays pinned to the bottom of the window while scrolling -->
+  <footer class="FooterNav">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="design.html" class="active">Conceptual Design</a>
+    </nav>
+  </footer>
 
-                <div class="report">
-                    <h3>Additional Documentation</h3>
-                    <p>
-                        Supporting calculations, technical
-                        drawings, and other documents.
-                    </p>
-                    <a href="reports/additional.pdf" target="_blank">
-                        View Report
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Design Gallery -->
-        <section class="design-gallery">
-            <h2>Design Gallery</h2>
-
-            <p>
-                Additional images, CAD models, sketches,
-                and diagrams of our design process.
-            </p>
-
-            <div class="gallery-container">
-                <img src="images/gallery1.jpg" alt="Design Image 1">
-                <img src="images/gallery2.jpg" alt="Design Image 2">
-                <img src="images/gallery3.jpg" alt="Design Image 3">
-                <img src="images/gallery4.jpg" alt="Design Image 4">
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="team.html">Our Team</a>
-            <a href="progress.html">Project Progress</a>
-        </nav>
-    </footer>
 </body>
-
 </html>
