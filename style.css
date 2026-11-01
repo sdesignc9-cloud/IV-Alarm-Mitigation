@@ -11,7 +11,7 @@ body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   /* leave room so the fixed footer never covers the last of the content */
-  padding-bottom: 140px;
+  padding-bottom: 90px;
   overflow-x: hidden;    /* full-width gradient bands never cause sideways scrolling */
 }
 
@@ -50,6 +50,16 @@ body {
   justify-content: center;
 }
 
+/* Home page hero: the image row spans the full window, the image takes 90% of it */
+.HeroRow {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.HeroRow .ProjectImage {
+  width: 90%;
+}
+
 .ProjectImage {
   width: 100%;
   height: auto;          /* vertical fit: keeps the image's proportions */
@@ -72,14 +82,14 @@ body {
   margin-left: calc(50% - 50vw);
   background: linear-gradient(to bottom,
               rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0.6) 50%,
+              rgba(0, 0, 0, 0.22) 50%,
               rgba(0, 0, 0, 0) 100%);
 }
 
 .HeaderText.GradientBand {
-  padding: 26px 0;
-  margin-top: 28px;
-  margin-bottom: 12px;
+  padding: 12px 0;
+  margin-top: 36px;
+  margin-bottom: 20px;
 }
 
 /* ============ Team page ============ */
@@ -90,31 +100,39 @@ body {
 
 /* One person: photo on the left, name + description on the right */
 .MemberRow {
-  padding: 30px 0;
+  padding: 44px 0;
 }
 
-/* Every other person gets the gradient band behind them */
-.MemberRow:nth-child(even) {
+/* Every other person gets the gradient band behind them and is mirrored to the right.
+   nth-of-type counts only the person rows (divs), not the section headings, so the
+   pattern carries on across Team Members, Faculty Advisor and Project Sponsors. */
+.MemberRow:nth-of-type(even) {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   background: linear-gradient(to bottom,
               rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0.6) 50%,
+              rgba(0, 0, 0, 0.4) 50%,
               rgba(0, 0, 0, 0) 100%);
 }
 
 .MemberInner {
   display: flex;
-  align-items: flex-start;  /* text keeps its natural height; the photo is sized to match it */
-  gap: 32px;
+  align-items: center;   /* text keeps its natural height and centers beside the photo */
+  gap: 36px;
   max-width: 1052px;     /* matches the page content width */
   margin: 0 auto;
 }
 
+/* Mirrored rows: photo on the right, text aligned right */
+.MemberRow:nth-of-type(even) .MemberInner {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
 .MemberPhoto {
   flex: none;
-  height: auto;          /* height set to match the text by the script in team.html */
-  width: 140px;
+  height: auto;          /* size set by the script in team.html (1.5x the text height) */
+  width: 180px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
@@ -150,6 +168,98 @@ body {
   margin-top: 56px;
 }
 
+/* ============ Design page ============ */
+/* Standalone intro text (no box) */
+.DescriptionText {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Spacing between each concept (heading, image, description box) */
+.DesignBlock {
+  margin-top: 56px;
+}
+
+.DesignBlock .ImageRow {
+  margin-bottom: 28px;
+}
+
+/* Smaller heading, one step below HeaderText */
+.SubHeaderText {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+/* Report cards: stacked with space between, alternating left / right */
+.ReportGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.ReportGrid .DescriptionBox {
+  width: 60%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;      /* odd reports sit on the left */
+}
+
+.ReportGrid .DescriptionBox:nth-child(even) {
+  align-self: flex-end;        /* even reports sit on the right */
+  text-align: right;
+}
+
+.ReportGrid .DescriptionBox:nth-child(even) .ReportLink {
+  align-self: flex-end;
+}
+
+.ReportGrid h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.ReportGrid p {
+  flex: 1;
+}
+
+.ReportLink {
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #14161c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ReportLink:hover {
+  background: #d8deea;
+}
+
+/* Gallery */
+.GalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.GalleryGrid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  background: #2a3040;
+}
+
 /* Centered box, text inside reads left to right */
 .DescriptionBox {
   max-width: 800px;
@@ -181,27 +291,38 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 120px;
+  height: 32px;          /* the solid black strip the links sit in */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 22px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
-  pointer-events: none;  /* clicks pass through the faded part... */
+  background: #000;
+  z-index: 20;
+}
+
+/* Fade from transparent to black, sitting just above the solid strip */
+.FooterNav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 35px;
+  background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;  /* clicks pass through the fade */
 }
 
 .FooterNav nav {
   display: flex;
   gap: 36px;
-  pointer-events: auto;  /* ...but the links stay clickable */
 }
 
 .FooterNav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem;
-  padding: 4px 2px;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  padding: 2px 2px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s, opacity 0.2s;
   opacity: 0.85;
@@ -213,6 +334,95 @@ body {
   border-bottom-color: #ffffff;
 }
 
+/* ============ Hover effects ============ */
+/* One speed for every hover animation: change it here */
+:root {
+  --hover-speed: 0.5s;
+}
+
+/* Everything that animates on hover */
+.DescriptionBox,
+.ProjectImage,
+.GalleryGrid img,
+.MemberPhoto,
+.ReportLink,
+.FooterNav a,
+.TitleText,
+.HeaderText,
+.SubHeaderText,
+.DescriptionText,
+.DescriptionBox p,
+.DescriptionBox h3,
+.MemberName,
+.MemberRole,
+.MemberText p,
+.MemberRow {
+  transition: transform var(--hover-speed) ease,
+              box-shadow var(--hover-speed) ease,
+              padding var(--hover-speed) ease,
+              opacity var(--hover-speed), border-color var(--hover-speed);
+}
+
+/* Text boxes no longer grow, they just glow */
+.DescriptionBox:hover {
+  box-shadow: 0 14px 50px 6px rgba(0, 0, 0, 0.65),
+              0 0 32px 4px rgba(150, 180, 255, 0.35);
+}
+
+/* Pictures (including team photos): grow 5% */
+.ProjectImage:hover,
+.GalleryGrid img:hover,
+.MemberPhoto:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons: grow 10% */
+.ReportLink:hover,
+.FooterNav a:hover {
+  transform: scale(1.1);
+}
+
+/* Titles, headers and names: grow 10% */
+.TitleText:hover,
+.HeaderText:hover,
+.SubHeaderText:hover,
+.DescriptionBox h3:hover,
+.MemberName:hover {
+  transform: scale(1.1);
+}
+
+/* Paragraphs: grow 5% (10% would push long paragraphs out of their boxes) */
+.DescriptionText:hover,
+.DescriptionBox p:hover,
+.MemberRole:hover,
+.MemberText p:hover {
+  transform: scale(1.05);
+}
+
+/* Grow text from the side it's aligned to, so it doesn't drift sideways */
+.DescriptionText,
+.DescriptionBox p,
+.DescriptionBox h3,
+.MemberName,
+.MemberRole,
+.MemberText p {
+  transform-origin: left center;
+}
+
+.ReportGrid .DescriptionBox:nth-child(even) p,
+.ReportGrid .DescriptionBox:nth-child(even) h3,
+.MemberRow:nth-of-type(even) .MemberName,
+.MemberRow:nth-of-type(even) .MemberRole,
+.MemberRow:nth-of-type(even) .MemberText p {
+  transform-origin: right center;
+}
+
+/* Person rows: get taller on hover (more space above and below), never wider */
+.MemberRow:hover {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
 /* ============ Small screens ============ */
 @media (max-width: 600px) {
   .HeaderBar { padding: 14px 18px; }
@@ -220,5 +430,6 @@ body {
   .DescriptionBox { padding: 20px; }
   .MemberInner { gap: 18px; padding: 0 16px; }
   .FooterNav nav { gap: 18px; }
+  .ReportGrid .DescriptionBox { width: 100%; }
   .FooterNav a { font-size: 0.95rem; }
 }

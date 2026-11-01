@@ -16,11 +16,12 @@
   <main class="PageContent">
 
     <!-- ===== Team Members ===== -->
-    <!-- Each person is one .MemberRow. Copy a row to add someone;
-         every other row automatically gets the gradient band. -->
-    <h2 class="HeaderText PageText">Team Members</h2>
-
+    <!-- Each person is one .MemberRow. Copy a row to add someone; every other row
+         automatically gets the gradient band and flips to the right.
+         All sections live inside ONE .MemberList so the pattern doesn't restart. -->
     <div class="MemberList">
+
+      <h2 class="HeaderText PageText">Team Members</h2>
 
       <div class="MemberRow">
         <div class="MemberInner">
@@ -88,12 +89,9 @@
         </div>
       </div>
 
-    </div>
+      <!-- ===== Faculty Advisor ===== -->
+      <h2 class="HeaderText PageText SectionGap">Faculty Advisor</h2>
 
-    <!-- ===== Faculty Advisor ===== -->
-    <h2 class="HeaderText PageText SectionGap">Faculty Advisor</h2>
-
-    <div class="MemberList">
       <div class="MemberRow">
         <div class="MemberInner">
           <img class="MemberPhoto" src="images/advisor.jpg" alt="Faculty Advisor">
@@ -104,12 +102,10 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ===== Project Sponsors ===== -->
-    <h2 class="HeaderText PageText SectionGap">Project Sponsors</h2>
+      <!-- ===== Project Sponsors ===== -->
+      <h2 class="HeaderText PageText SectionGap">Project Sponsors</h2>
 
-    <div class="MemberList">
       <div class="MemberRow">
         <div class="MemberInner">
           <img class="MemberPhoto" src="images/sponsor1.jpg" alt="Sponsor 1">
@@ -144,15 +140,16 @@
     </nav>
   </footer>
 
-  <!-- Makes each round photo exactly as tall as its name + description,
-       and keeps it that way when the window is resized. -->
+  <!-- Sizes each round photo from the height of its name + description
+       (PHOTO_SCALE x that height), and keeps it that way when the window is resized. -->
   <script>
+    const PHOTO_SCALE = 1.5;
     const rows = document.querySelectorAll('.MemberInner');
     const sizePhotos = () => {
       rows.forEach(row => {
         const text = row.querySelector('.MemberText');
         const photo = row.querySelector('.MemberPhoto');
-        const h = text.offsetHeight;
+        const h = Math.round(text.offsetHeight * PHOTO_SCALE);
         photo.style.width = h + 'px';
         photo.style.height = h + 'px';
       });
