@@ -484,7 +484,7 @@ body {
 .DescriptionBox h3:hover,
 .MemberName:hover,
 .GalleryName:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Paragraphs: grow 5% (10% would push long paragraphs out of their boxes) */
@@ -493,7 +493,7 @@ body {
 .MemberRole:hover,
 .MemberText p:hover,
 .GalleryDesc:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 /* All text: brighten and glow a little on hover */
