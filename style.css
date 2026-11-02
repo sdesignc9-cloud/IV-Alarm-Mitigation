@@ -281,12 +281,50 @@ body {
   background: #d8deea;
 }
 
-/* Gallery */
+/* Gallery: 80% of the window wide, image with name + description under each */
 .GalleryGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  width: 80vw;
+  margin-left: calc(50% - 40vw);
   margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* 4 across on wide screens */
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .GalleryGrid { grid-template-columns: repeat(2, 1fr); }   /* 2 x 2 */
+}
+
+@media (max-width: 600px) {
+  .GalleryGrid { grid-template-columns: 1fr; }              /* stacked on phones */
+}
+
+.GalleryItem {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.GalleryItem figcaption {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* each line only as wide as its text */
+}
+
+.GalleryName {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.GalleryDesc {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
 }
 
 .GalleryGrid img {
@@ -403,7 +441,9 @@ body {
 .DescriptionBox h3,
 .MemberName,
 .MemberRole,
-.MemberText p {
+.MemberText p,
+.GalleryName,
+.GalleryDesc {
   transition: transform var(--hover-speed) ease,
               box-shadow var(--hover-speed) ease,
               color var(--hover-speed) ease,
@@ -442,7 +482,8 @@ body {
 .HeaderText:hover,
 .SubHeaderText:hover,
 .DescriptionBox h3:hover,
-.MemberName:hover {
+.MemberName:hover,
+.GalleryName:hover {
   transform: scale(1.1);
 }
 
@@ -450,7 +491,8 @@ body {
 .DescriptionText:hover,
 .DescriptionBox p:hover,
 .MemberRole:hover,
-.MemberText p:hover {
+.MemberText p:hover,
+.GalleryDesc:hover {
   transform: scale(1.05);
 }
 
@@ -462,7 +504,9 @@ body {
 .DescriptionBox p:hover,
 .DescriptionBox h3:hover,
 .MemberName:hover,
-.MemberText p:hover {
+.MemberText p:hover,
+.GalleryName:hover,
+.GalleryDesc:hover {
   color: #ffffff;
   text-shadow: var(--text-glow);
 }
